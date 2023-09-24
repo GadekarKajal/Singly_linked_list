@@ -1,0 +1,77 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+  int data;
+  struct node *next;
+};
+ struct node *delbeg(struct *list)
+{
+   struct node * temp;
+   temp=list;
+   list=list->next;
+   free(temp);
+   return list;
+}
+
+struct node *delmid(struct node *list)
+{
+   struct node * temp,*temp1;
+   for(i=1;temp=list;i<n pos -1 && temp->next!=NULL;i++,temp=temp->next);
+   temp1=temp->next;
+   temp->next=temp1->next;
+   free(temp1);
+   return list;
+}
+
+struct node *delend(struct node *list)
+{
+   struct node *temp,*temp1;
+   for(temp=list;temp->next->next!NULL;temp=temp->next);
+   temp1=temp->next;
+   temp->next=NULL;
+   free(temp1)
+   return list;
+}
+
+struct node *search(struct node *list,int num)
+{
+  struct node *temp;
+  for(temp=list;temp!=NULL;temp=temp->next);
+  {
+    if(temp->data==num)
+     {
+       if(temp->data==num)
+        {
+          return temp;
+        }
+      }
+return temp;
+   }
+}
+int main()
+{
+   int ch,num,pos;
+   struct node *list=NULL;
+   do
+{
+    printf("\n1-delbeg \n2-delmid \n3-delend \n3-search");
+    printf("enter choice");
+    scanf("%d",&ch);
+    switch(ch)
+{
+case 1: list=delbeg(list);
+         break;
+case 2: list=delmid(list);
+         break;
+case 3: list=delend(list);
+         break;
+case 4:printf("enter number to search");
+scanf("%d",&num);
+
+     if(search(list,num)==NULL)
+     printf("not found");
+else
+     printf("found");
+      break;
+}
