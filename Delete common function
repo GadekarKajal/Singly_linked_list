@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<stdlib.h>
+typedef struct node
+{
+   int data;
+   struct node *next;
+};
+
+struct node *delsingly(struct *list,int pos)
+{
+   int i;
+   struct node *temp,temp1;
+   if(pos==1)
+     {
+         temp=list;
+         list=list->next;
+         free(temp);
+      }
+else
+{
+   for(i=1,temp=list;i<(pos-1)&&temp->next!=NULL;i++,temp=temp->next);
+   temp1=temp->next;
+   temp->next=temp1->next;
+   free(temp1);
+ }
+return list;
+}
